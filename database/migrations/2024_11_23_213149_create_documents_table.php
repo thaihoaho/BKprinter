@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('documents')) {
         Schema::create('documents', function (Blueprint $table) {
             $table->id('DocumentID');
             $table->unsignedBigInteger('StudentID');
@@ -21,7 +22,8 @@ return new class extends Migration
 
             // Foreign key constraint
             $table->foreign('StudentID')->references('StudentID')->on('students')->onDelete('cascade');
-        });
+        }
+    ); };
     }
 
     /**

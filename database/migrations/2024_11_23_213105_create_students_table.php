@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('students')) {
         Schema::create('students', function (Blueprint $table) {
             $table->id('StudentID'); // Khóa chính
             $table->string('Name', 100);
             $table->string('Email', 100)->unique();
             $table->integer('PageBalance')->default(100);
             $table->timestamps();
-        });
+        }); };
     }
 
     /**

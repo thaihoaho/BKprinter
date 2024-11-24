@@ -12,6 +12,8 @@ Route::prefix('printers')->group(function () {
     Route::delete('/{id}', [PrinterController::class, 'destroy']); // Xóa máy in
 });
 
+
+
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
 // })->middleware('auth:sanctum');

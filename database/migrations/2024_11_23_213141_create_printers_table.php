@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('printers')) {
         Schema::create('printers', function (Blueprint $table) {
             $table->id('PrinterID');
             $table->string('Brand', 50);
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->string('BuildingName', 50);
             $table->string('RoomNumber', 10);
             $table->timestamps();
-        });
+        }); };
     }
 
     /**
